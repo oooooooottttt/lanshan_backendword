@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+)
+
+func sushu(a int) bool {
+	for i := 2; i < a; i++ {
+		if a%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+func main() {
+	a := 2024214449
+	if sushu(a) {
+		fmt.Printf("%d是一个素数", a)
+	} else {
+		fmt.Printf("%d不是一个素数", a)
+	}
+}
