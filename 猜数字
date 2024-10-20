@@ -1,0 +1,34 @@
+package main
+
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func equal(num, random int) bool {
+    return num != random
+}
+
+func main() {
+    fmt.Println("请在1到100范围猜测一个整数。")
+    rand.Seed(time.Now().UnixNano())
+    random := rand.Intn(100) + 1
+    fmt.Println(random)
+    var num int
+    for equal(num, random) {
+        _, err := fmt.Scan(&num)
+        if err != nil {
+            fmt.Println("读写时出错了")
+            return
+        }
+        fmt.Printf("你输入的整数为%d", num)
+        if num > random {
+            fmt.Println("输入的数字过大，请重新猜测!")
+        } else if num < random {
+            fmt.Println("输入的数字过小，请重新输入！")
+        } else {
+            fmt.Printf("恭喜猜测正确，这个数字就是%d", random)
+        }
+    }
+}
