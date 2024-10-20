@@ -1,0 +1,15 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func S(r float64) float64 {
+	return math.Pi * math.Pow(r, 2)
+}
+
+func main() {
+	r := 15.0
+	fmt.Printf("半径为%.2f的圆面积为%.2f", r, S(r))
+}
