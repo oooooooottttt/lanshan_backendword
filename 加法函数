@@ -1,0 +1,14 @@
+package main
+
+import (
+	"fmt"
+)
+
+func add(x, y int) int {
+	return x + y
+}
+func main() {
+	a := 13
+	b := 14
+	fmt.Printf("%d+%d=%d", a, b, add(a, b))
+}
